@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const utils_1 = require("./utils");
 const stream_1 = require("stream");
@@ -27,6 +27,6 @@ Transformer.prototype._transform = function (chunk, _encoding, callback) {
     callback();
 };
 Transformer.prototype._flush = function (callback) {
-    this.push(utils_1.stringifyEvent({ event: 'end', data: '' }));
+    this.push(utils_1.stringifyEvent({ event: "end", data: "" }));
     callback();
 };

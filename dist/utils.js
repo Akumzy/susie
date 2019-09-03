@@ -1,17 +1,17 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function stringifyEvent(event) {
-    let str = '';
-    const endl = '\r\n';
+    let str = "";
+    const endl = "\r\n";
     for (const i in event) {
         let val = event[i];
         if (val instanceof Buffer) {
             val = val.toString();
         }
-        if (typeof val === 'object') {
+        if (typeof val === "object") {
             val = JSON.stringify(val);
         }
-        str += i + ': ' + val + endl;
+        str += i + ": " + val + endl;
     }
     str += endl;
     return str;

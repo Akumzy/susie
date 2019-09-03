@@ -7,9 +7,8 @@
     "resolveJsonModule": false,
     "esModuleInterop": true,
     "sourceMap": false,
-    "declaration": true,
-    "outDir": "dist",
-    "types": ["node"]
+    "declaration": false,
+    "outDir": "dist"
   },
-  "include": ["lib/**/*"]
+  "include": ["src/**/*", "dist/index.d.ts"]
 }
