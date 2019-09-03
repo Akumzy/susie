@@ -1,7 +1,6 @@
 'use strict';
-
-exports.stringifyEvent = function (event) {
-
+Object.defineProperty(exports, "__esModule", { value: true });
+function stringifyEvent(event) {
     let str = '';
     const endl = '\r\n';
     for (const i in event) {
@@ -15,6 +14,6 @@ exports.stringifyEvent = function (event) {
         str += i + ': ' + val + endl;
     }
     str += endl;
-
     return str;
-};
+}
+exports.stringifyEvent = stringifyEvent;

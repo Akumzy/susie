@@ -1,11 +1,12 @@
 {
-  "name": "susie",
+  "name": "@akumzy/sse",
   "version": "3.0.0",
   "description": "Server-sent events with hapi",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "lab -a code -t 100 -L",
-    "start": "node examples"
+    "test": "lab -a @hapi/code -t 100 -L",
+    "start": "node examples",
+    "build": "tsc -p ./tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -28,9 +29,10 @@
   },
   "homepage": "https://github.com/mtharrison/susie#readme",
   "devDependencies": {
-    "code": "5.x.x",
-    "hapi": "17.x.x",
-    "inert": "5.x.x",
-    "lab": "15.x.x"
+    "@hapi/code": "6.x.x",
+    "@hapi/hapi": "18.x.x",
+    "@hapi/inert": "5.x.x",
+    "@hapi/lab": "20.x.x",
+    "@types/hapi__hapi": "^18.0.2"
   }
 }

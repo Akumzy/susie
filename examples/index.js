@@ -1,6 +1,6 @@
 'use strict';
 
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const Path = require('path');
 const PassThrough = require('stream').PassThrough;
 
@@ -8,7 +8,7 @@ const server = Hapi.server({ port: 4000 });
 
 const start = async () => {
 
-    await server.register([require('inert'), require('..')]);
+    await server.register([require('@hapi/inert'), require('../dist')]);
 
     server.route({
         method: 'GET',
