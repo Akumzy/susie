@@ -56,8 +56,10 @@ function handleEvent(event: any, _options: any, streamOptions: any) {
     state.stream = stream;
     state.mode = "object";
     const response = this.response(stream)
-      .header("content-type", "text/event-stream")
-      .header("content-encoding", "identity");
+      .header("Content-Encoding", "identity")
+      .header("Content-Type", "text/event-stream; charset=utf-8")
+      .header("Cache-Control", "no-cache, no-store, must-revalidate")
+      .header("Connection", "keep-alive");
     internals.writeEvent(event, stream);
     return response;
   }
