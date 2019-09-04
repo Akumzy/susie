@@ -23,7 +23,7 @@ internals.writeEvent = function(event: any, stream: PassThrough) {
   }
 };
 
-function handleEvent(event: any, _options: any, streamOptions: any) {
+async function handleEvent(event: any, _options: any, streamOptions: any) {
   let stream: PassThrough;
 
   const state = (this.request.plugins.susie = this.request.plugins.susie || {});
@@ -45,8 +45,10 @@ function handleEvent(event: any, _options: any, streamOptions: any) {
     }
 
     return this.response(stream)
-      .header("content-type", "text/event-stream")
-      .header("content-encoding", "identity");
+      .header("Content-Encoding", "identity")
+      .header("Content-Type", "text/event-stream; charset=utf-8")
+      .header("Cache-Control", "no-cache, no-store, must-revalidate")
+      .header("Connection", "keep-alive");
   }
 
   // handle a first object arg

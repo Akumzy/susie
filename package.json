@@ -1,6 +1,6 @@
 {
   "name": "@akumzy/sse",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Server-sent events with hapi",
   "main": "dist/index.js",
   "scripts": {

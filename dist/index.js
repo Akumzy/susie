@@ -17,7 +17,7 @@ internals.writeEvent = function (event, stream) {
         stream.end();
     }
 };
-function handleEvent(event, _options, streamOptions) {
+async function handleEvent(event, _options, streamOptions) {
     let stream;
     const state = (this.request.plugins.susie = this.request.plugins.susie || {});
     // handle a stream arg
@@ -36,8 +36,10 @@ function handleEvent(event, _options, streamOptions) {
             event.pipe(stream);
         }
         return this.response(stream)
-            .header("content-type", "text/event-stream")
-            .header("content-encoding", "identity");
+            .header("Content-Encoding", "identity")
+            .header("Content-Type", "text/event-stream; charset=utf-8")
+            .header("Cache-Control", "no-cache, no-store, must-revalidate")
+            .header("Connection", "keep-alive");
     }
     // handle a first object arg
     if (!state.stream) {
