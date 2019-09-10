@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function stringifyEvent(event) {
     let str = "";
     const endl = "\r\n";

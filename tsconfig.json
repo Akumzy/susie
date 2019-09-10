@@ -5,7 +5,8 @@
     "noImplicitAny": true,
     "removeComments": false,
     "resolveJsonModule": false,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": false,
     "sourceMap": false,
     "declaration": false,
     "outDir": "dist"

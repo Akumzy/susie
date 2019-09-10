@@ -3,7 +3,7 @@
 import { PassThrough, Stream } from "stream";
 import Transformer from "./transformer";
 import { stringifyEvent } from "./utils";
-import Hapi, { ResponseObject } from "@hapi/hapi";
+import { Server, ResponseObject } from "@hapi/hapi";
 const internals: {
   writeEvent?: (event: any, stream: PassThrough) => void;
   handleEvent?: (
@@ -74,7 +74,7 @@ async function handleEvent(event: any, _options: any, streamOptions: any) {
 
 export const plugin = {
   pkg: require("../package.json"),
-  register: function(server: Hapi.Server) {
+  register: function(server: Server) {
     server.decorate("toolkit", "event", handleEvent);
   }
 };

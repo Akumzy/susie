@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 const stream_1 = require("stream");
-const transformer_1 = __importDefault(require("./transformer"));
+const transformer_1 = require("./transformer");
 const utils_1 = require("./utils");
 const internals = {};
 internals.writeEvent = function (event, stream) {
